@@ -31,14 +31,31 @@ Ensure your program takes only numeric data. Don’t let the user continue unles
 
 Challenges
 Make the user interface accept height and weight in Imperial or metric units. You’ll need a slightly different formula for metric units.
-For Imperial measurements, prompt for feet and inches and convert feet to inches so the user doesn’t have to.
+For Imperial measurements, prompt for feet and inches and convert feet to inches so the user doesn't have to.
 Use a GUI interface with sliders for height and weight. Update the user interface on the fly. Use colors as well as text to indicate health.
  */
 
 public class App {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        
+        System.out.print("What is your height in inches? ");
+        float height = in.nextFloat();
+        System.out.print("What is your weight in pounds? ");
+        float weight = in.nextFloat();
 
+        // calculations
+        float BMI = (weight / (height * height)) * 703;
+
+        // if statements determine within or out of range
+        if (BMI >= 18.5 && BMI < 25)
+        {
+            System.out.printf("Your BMI is %.2f.\nYou are within the ideal weight range.\n", BMI);
+        }
+        if (BMI < 18.5) {
+            System.out.printf("Your BMI is %.2f.\nYou are underweight. You should see your doctor.\n", BMI);
+        }
+        if (BMI > 25) {
+            System.out.printf("Your BMI is %.2f.\nYou are overweight. You should see your doctor.\n", BMI);
+        }
     }
 }
