@@ -47,8 +47,7 @@ public class App {
         float BMI = (weight / (height * height)) * 703;
 
         // if statements determine within or out of range
-        if (BMI >= 18.5 && BMI < 25)
-        {
+        if (BMI >= 18.5 && BMI < 25) {
             System.out.printf("Your BMI is %.2f.\nYou are within the ideal weight range.\n", BMI);
         }
         if (BMI < 18.5) {
